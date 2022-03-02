@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ANDROID_ShoppingListApp">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
