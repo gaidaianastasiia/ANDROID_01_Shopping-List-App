@@ -1,7 +1,7 @@
 package com.example.android_shopping_list_app.data.repositories.products_list
 
-import com.example.android_shopping_list_app.entity.NewProductItem
-import com.example.android_shopping_list_app.entity.ProductItem
+import com.example.android_shopping_list_app.entity.product.NewProductItem
+import com.example.android_shopping_list_app.entity.product.ProductItem
 
 interface ProductsListRepository {
     suspend fun getAll(id: Long): List<ProductItem>
