@@ -1,4 +1,4 @@
-package com.example.android_shopping_list_app.entity
+package com.example.android_shopping_list_app.entity.product
 
 data class ProductItem(
     val id: Long,
