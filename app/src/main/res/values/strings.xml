@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">ANDROID_Shopping-List-App</string>
+    <string name="app_name">ShoppingList</string>
+
+    <!--  Shopping lists screen  -->
+    <string name="lists_screen_title">My lists</string>
+    <string name="create_list_button_description">Create list button</string>
+    <string name="shopping_lists_empty_state_message">You haven\'t any lists yet</string>
+
+    <!--  Create list fragment dialog  -->
+    <string name="shopping_lists_create_dialog_title">New list</string>
+    <string name="shopping_lists_edit_dialog_title">Edit name</string>
+    <string name="list_name_hint">List name</string>
+
+    <!--  Products lists screen  -->
+    <string name="product_input_hint_text">Product : amount</string>
+    <string name="add_product_amount_button_text">:123</string>
+    <string name="add_product_button_description">Add Product Button</string>
+
+    <string name="retry_button">Retry</string>
+    <string name="recover_button">Recover</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
+    <string name="empty_state_message">The list is empty</string>
 </resources>
