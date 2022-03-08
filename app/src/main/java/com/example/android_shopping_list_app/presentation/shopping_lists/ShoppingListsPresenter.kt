@@ -61,7 +61,7 @@ class ShoppingListsPresenter @Inject constructor(
             deleteProductFromUI(listId)
             val recoverDeletedListMessage = getRecoverDeletedListMessage(listId)
 
-            launch(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 view?.showRecoverDeletedListMessage(recoverDeletedListMessage, listId)
             }
         }

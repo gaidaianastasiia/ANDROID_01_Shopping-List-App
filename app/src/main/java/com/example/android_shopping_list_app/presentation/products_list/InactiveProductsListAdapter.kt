@@ -38,7 +38,7 @@ class InactiveProductsListAdapter(
         val productId = product.id
         val productActiveState = product.activeState
 
-        holder.apply {
+        holder.run {
             bind(product)
 
             itemBinding.root.setOnClickListener {

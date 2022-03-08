@@ -11,7 +11,7 @@ import com.example.android_shopping_list_app.databinding.DialogListNameBinding
 
 private const val ID_ARGUMENTS_KEY = "ID_ARGUMENTS_KEY"
 private const val NAME_ARGUMENTS_KEY = "NAME_ARGUMENTS_KEY"
-private const val NO_LISTENER_EXCEPTION_MESSAGE = " must implement NoticeDialogListener"
+private const val NO_LISTENER_EXCEPTION_MESSAGE = "must implement NoticeDialogListener"
 private const val NULL_ACTIVITY_EXCEPTION_MESSAGE = "Activity cannot be null"
 
 class ListNameDialogFragment : DialogFragment() {
@@ -29,9 +29,7 @@ class ListNameDialogFragment : DialogFragment() {
         try {
             dialogListener = context as CreateListDialogListener
         } catch (e: ClassCastException) {
-            throw ClassCastException(
-                activity.toString() + NO_LISTENER_EXCEPTION_MESSAGE
-            )
+            throw ClassCastException("${activity.toString()} $NO_LISTENER_EXCEPTION_MESSAGE")
         }
     }
 
@@ -61,8 +59,7 @@ class ListNameDialogFragment : DialogFragment() {
                 if (isEditableState()) {
                     setEditableState()
                 } else {
-                    listNameDialogTitleTextView.text =
-                        getString(R.string.shopping_lists_create_dialog_title)
+                    listNameDialogTitleTextView.text = getString(R.string.shopping_lists_create_dialog_title)
                 }
             }
 
@@ -80,8 +77,7 @@ class ListNameDialogFragment : DialogFragment() {
         val presetListName = getPresetListName()
 
         binding.run {
-            listNameDialogTitleTextView.text =
-                getString(R.string.shopping_lists_edit_dialog_title)
+            listNameDialogTitleTextView.text = getString(R.string.shopping_lists_edit_dialog_title)
             listNameEditText.run {
                 setText(presetListName)
                 val cursorIndex = text.length

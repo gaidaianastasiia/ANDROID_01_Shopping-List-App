@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/inactiveProductNameTextView"
         style="@style/InactiveProductNameTextView"
         android:layout_width="0dp"
@@ -17,7 +17,7 @@
         app:layout_constraintWidth_percent="0.7"
         tools:text="product name" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/inactiveProductAmountTextView"
         style="@style/ProductAmountTextView"
         android:layout_width="0dp"

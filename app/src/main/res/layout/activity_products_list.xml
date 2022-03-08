@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/listTitleTextView"
         style="@style/ScreenTitleTextView"
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/productInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/productInputEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:importantForAutofill="no"
             android:inputType="text" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addProductAmountButton"
             style="@style/AddProductAmountButton"
             android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
             android:layout_weight="1"
             android:text="@string/add_product_amount_button_text" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/saveProductButton"
             style="@style/AddProductButton"
             android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/add_product_button_description"
             android:src="@drawable/ic_baseline_check_24" />
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <FrameLayout
         android:id="@+id/progressBarLayout"
@@ -109,7 +109,7 @@
             android:layout_gravity="center" />
     </FrameLayout>
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/errorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -118,20 +118,20 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center"
             tools:text="Error message" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/retry_button" />
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/emptyStateLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -142,10 +142,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listTitleTextView">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/empty_state_message" />
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

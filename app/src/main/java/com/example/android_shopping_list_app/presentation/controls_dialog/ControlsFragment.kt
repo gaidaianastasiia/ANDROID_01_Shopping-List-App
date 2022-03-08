@@ -9,12 +9,12 @@ import com.example.android_shopping_list_app.databinding.FragmentControlsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 private const val NO_LISTENER_EXCEPTION_MESSAGE =
-    " must implement ShoppingListsControlsFragmentListener"
+    "must implement ShoppingListsControlsFragmentListener"
 private const val ID_ARGUMENTS_KEY = "ID_ARGUMENTS_KEY"
 
 class ControlsFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentControlsBinding
-    private lateinit var fragmentListener: ShoppingListsControlsFragmentListener
+    private lateinit var controlsListener: ShoppingListsControlsFragmentListener
 
     interface ShoppingListsControlsFragmentListener {
         fun onEditButtonClick(id: Long?)
@@ -25,11 +25,9 @@ class ControlsFragment : BottomSheetDialogFragment() {
         super.onAttach(context)
 
         try {
-            fragmentListener = context as ShoppingListsControlsFragmentListener
+            controlsListener = context as ShoppingListsControlsFragmentListener
         } catch (e: ClassCastException) {
-            throw ClassCastException(
-                activity.toString() + NO_LISTENER_EXCEPTION_MESSAGE
-            )
+            throw ClassCastException("${activity.toString()} $NO_LISTENER_EXCEPTION_MESSAGE")
         }
     }
 
@@ -55,7 +53,7 @@ class ControlsFragment : BottomSheetDialogFragment() {
     private fun setEditButtonClickListener() {
         binding.editListNameButton.setOnClickListener {
             val listId = getListId()
-            fragmentListener.onEditButtonClick(listId)
+            controlsListener.onEditButtonClick(listId)
             dismissAllowingStateLoss()
         }
     }
@@ -63,7 +61,7 @@ class ControlsFragment : BottomSheetDialogFragment() {
     private fun setDeleteButtonClickListener() {
         binding.deleteListNameButton.setOnClickListener {
             val listId = getListId()
-            fragmentListener.onDeleteButtonClick(listId)
+            controlsListener.onDeleteButtonClick(listId)
             dismissAllowingStateLoss()
         }
     }

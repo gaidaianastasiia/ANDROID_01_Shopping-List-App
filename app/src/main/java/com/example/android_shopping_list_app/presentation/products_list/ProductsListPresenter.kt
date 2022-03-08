@@ -6,6 +6,7 @@ import com.example.android_shopping_list_app.entity.product.ProductItem
 import com.example.android_shopping_list_app.presentation.base.BasePresenter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 private const val INPUT_SEPARATOR = ":"
@@ -76,7 +77,7 @@ class ProductsListPresenter @Inject constructor(
             val editableData = getProductEditableData(product)
             updatableProductId = productId
 
-            launch(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 view?.hideLoader()
                 view?.setProductEditableData(editableData)
                 view?.hideAddNewProductButton()
@@ -102,7 +103,7 @@ class ProductsListPresenter @Inject constructor(
             deleteProductFromUI(productId)
             val recoverDeletedProductMessage = getRecoverDeletedProductMessage(productId)
 
-            launch(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 view?.showRecoverDeletedProductMessage(recoverDeletedProductMessage, productId)
             }
         }
