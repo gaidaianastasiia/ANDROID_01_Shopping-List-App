@@ -7,7 +7,7 @@ import com.example.android_shopping_list_app.utils.toShoppingListData
 import javax.inject.Inject
 
 class LocalShoppingListsRepository @Inject constructor(
-    private val shoppingListDao: ShoppingListDao
+    private val shoppingListDao: ShoppingListDao,
 ) : ShoppingListsRepository {
     override suspend fun getAll() =
         shoppingListDao.getAll().map { it.toShoppingList() }
